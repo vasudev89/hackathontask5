@@ -8,7 +8,7 @@ def validate(date_text):
     datetime.datetime.strptime(date_text, '%m/%d/%Y')
     return True
   except ValueError as e:
-    print( e )
+    # print( e )
     return False
 
 def validateTime(time_text):
@@ -16,7 +16,7 @@ def validateTime(time_text):
     datetime.datetime.strptime(time_text, '%H:%M')
     return True
   except ValueError as e:
-    print( e )
+    # print( e )
     return False
 
 def addRecord(): 
@@ -89,7 +89,7 @@ def deleteAllRecords():
   cursor.execute(query)
   cursor.close()
   dbConn.commit()
-  print("ALL RECORDS DELETED SUCCESSFULLY")
+  print("ALL RECORDS DELETED SUCCESSFULLY: IF THEY EXISTED")
 
 def deleteAllRecordsForUser():
 
@@ -100,7 +100,7 @@ def deleteAllRecordsForUser():
   cursor.execute(query)
   cursor.close()
   dbConn.commit()
-  print("ALL RECORDS FOR %s DELETED SUCCESSFULLY" % username) 
+  print("ALL RECORDS FOR %s DELETED SUCCESSFULLY: IF THEY EXISTED" % username) 
 
 def fetchAllRecordsForAUserDate():
   username = input("ENTER USERNAME: ")
